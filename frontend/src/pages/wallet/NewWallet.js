@@ -76,6 +76,8 @@ export default function NewWallet() {
                 label="IBAN"
                 autoComplete="iban"
                 required
+                placeholder="DE89370400440532013000"
+                helperText="Enter a valid IBAN (e.g. DE89370400440532013000, GB29NWBK60161331926819)"
                 value={formValues.iban}
                 onChange={handleInputChange}
               />

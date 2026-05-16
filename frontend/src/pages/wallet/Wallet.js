@@ -67,7 +67,7 @@ export default function Wallet() {
     const userId = AuthService.getCurrentUser()?.id;
     HttpService.getWithAuth(`/wallets/users/${userId}`)
       .then((response) => {
-        setData(response.data);
+        setData(response);
       })
       .catch((error) => {
         if (error?.response?.status === 401) {

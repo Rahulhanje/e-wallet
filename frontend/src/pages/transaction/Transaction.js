@@ -70,7 +70,7 @@ export default function Transaction() {
     const userId = AuthService.getCurrentUser()?.id;
     HttpService.getWithAuth(`/transactions/users/${userId}`)
       .then((response) => {
-        setData(response.data.content);
+        setData(response.content);
       })
       .catch((error) => {
         if (error?.response?.status === 401) {

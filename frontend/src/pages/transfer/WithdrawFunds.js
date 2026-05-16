@@ -33,7 +33,7 @@ export default function WithdrawFunds() {
   useEffect(() => {
     const userId = AuthService.getCurrentUser()?.id;
     HttpService.getWithAuth(`/wallets/users/${userId}`).then((result) => {
-      setFromWalletIbans(result.data);
+      setFromWalletIbans(result);
     });
   }, []);
 
