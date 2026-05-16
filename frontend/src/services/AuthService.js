@@ -3,7 +3,7 @@ import axios from './axios';
 const login = (body) => {
   const url = '/auth/login';
   return axios.post(url, body).then((response) => {
-    localStorage.setItem('user', JSON.stringify(response.data.data));
+    localStorage.setItem('user', JSON.stringify(response.data));
     return response.data;
   });
 };
