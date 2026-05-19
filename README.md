@@ -81,3 +81,25 @@ In order to run and test the application, see details on [How to run?](backend/s
 
 <br/>
 <br/>
+
+# from the e-wallet root directory
+docker compose -f docker-compose.yml -f docker-compose.prod.yml up --build
+
+To Stop (data is preserved automatically):
+shell
+docker compose -f docker-compose.yml -f docker-compose.prod.yml down
+
+This stops all containers but keeps your database data in the Docker volume (ewallet_postgres_data).
+
+To Start Again (picks up where you left off):
+shell
+docker compose -f docker-compose.yml -f docker-compose.prod.yml up --build
+
+Your wallets, transactions, and user accounts will all still be there — the PostgreSQL data is stored in a Docker volume that persists across restarts.
+
+Quick Reference
+Command	What it does
+docker compose ... down	Stops containers, keeps data ✅
+docker compose ... up --build	Starts everything, rebuilds if code changed
+docker compose ... down -v	⚠️ Stops AND deletes all data (the -v flag removes volumes)
+DE89370400440532013000
